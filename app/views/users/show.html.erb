@@ -1,0 +1,8 @@
+<h1 id="welcome"> Welcome, <%= current_user.username %>! </h1>
+<h2>Your Most Recent Tool: <%= most_recent_tool.name %></h2>
+
+<ul>
+  <% current_user.tools.each do |tool| %>
+  <li> Tool: <%= link_to tool.name, tool_path(tool) %>, Price:<%= tool.price %>, Quantity:<%= tool.quantity %></li>
+  <% end  %>
+</ul>
